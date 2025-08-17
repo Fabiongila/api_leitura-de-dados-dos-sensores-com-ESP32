@@ -3,6 +3,7 @@ from estrutura_banco_de_dados import Dispositivo, Sensor, Usuario, api, db
 from datetime import datetime, timedelta, timezone
 from functools import wraps
 import jwt
+import os
 
 
 def token_obrigatorio(f):
@@ -129,4 +130,7 @@ def recebe_dados():
         db.session.add(sensor)
         db.session.commit()
 
-api.run(port=500, host='localhost', debug=True)
+
+if __name__ == '__main__':
+    from os import environ
+    api.run(host='0.0.0.0', port=int(environ.get('PORT', 5000)))
