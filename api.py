@@ -130,7 +130,7 @@ def recebe_dados():
         db.session.add(sensor)
         db.session.commit()
 
-
+         
 if __name__ == '__main__':
     from os import environ
     api.run(host='0.0.0.0', port=int(environ.get('PORT', 5000)))
