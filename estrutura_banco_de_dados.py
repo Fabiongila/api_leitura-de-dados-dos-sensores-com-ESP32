@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
-
+from flask_cors import CORS
 
 # Criar uma API Flask
 # Definir a estrutura da tabela sensor
@@ -9,6 +9,7 @@ import os
 
 # Criar uma API Flask
 api = Flask(__name__)
+CORS(api)
 
 # Criar uma instancia de SQLAlchemy
 api.config['SECRET_KEY'] = '12SG860@_R:'
